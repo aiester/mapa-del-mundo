@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111e">
+  <title>Atlas · Explora el mundo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Atlas, inicio">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>atlas<span class="brand-period">.</span></span>
+      </a>
+      <div class="topbar-note"><span class="live-dot"></span> EXPLORADOR DEL MUNDO</div>
+      <div class="topbar-right">TIERRA <span>·</span> 01</div>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">UN MUNDO DE POSIBILIDADES</p>
+      <h1 id="page-title">El mundo, <span>en tus manos.</span></h1>
+      <p class="subtitle">Gira el globo y descubre los datos de cada país.</p>
+    </section>
+
+    <section class="explorer" aria-label="Globo terráqueo interactivo">
+      <div class="globe-wrap">
+        <div class="globe-halo" aria-hidden="true"></div>
+        <div id="globeViz" aria-label="Globo terráqueo 3D. Arrastra para girar y selecciona un país."></div>
+        <div class="globe-caption"><span class="caption-line"></span> PLANETA TIERRA <span class="caption-line"></span></div>
+        <div class="globe-help"><span class="mouse-icon" aria-hidden="true"></span> ARRASTRA PARA EXPLORAR</div>
+        <div class="globe-loading" id="loading">
+          <span class="loader"></span>
+          <span id="loadingText">Preparando el globo...</span>
+        </div>
+      </div>
+
+      <aside class="info-card" id="infoCard" aria-live="polite">
+        <div class="card-topline">
+          <span class="card-kicker" id="cardKicker">FICHA DEL PAÍS</span>
+          <span class="card-index" id="cardIndex">—</span>
+        </div>
+        <div class="card-content" id="cardContent">
+          <div class="empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="17" stroke="currentColor" stroke-width="1.5"/><path d="M7 24h34M24 7c4.5 4.7 6.5 10.4 6.5 17S28.5 36.3 24 41c-4.5-4.7-6.5-10.4-6.5-17S19.5 11.7 24 7Z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h2>¿A dónde vamos?</h2>
+          <p class="empty-copy">Selecciona cualquier país en el globo para conocerlo un poco mejor.</p>
+          <div class="card-hint"><span>↖</span> ELIGE UN PAÍS PARA EMPEZAR</div>
+        </div>
+        <div class="card-footer"><span id="countryCount">CARGANDO PAÍSES</span><span class="footer-star">✳</span></div>
+      </aside>
+    </section>
+
+    <footer class="page-footer">
+      <span>UN PEQUEÑO VISTAZO A NUESTRO GRAN PLANETA</span>
+      <span>HECHO PARA EXPLORAR <span class="footer-heart">♥</span></span>
+    </footer>
+  </main>
+
+  <script src="https://unpkg.com/globe.gl@2.46.2/dist/globe.gl.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+  <script src="codigo.js"></script>
+</body>
+</html>
